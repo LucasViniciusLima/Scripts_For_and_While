@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <conio.h>
+#include <locale.h>
+
+main()
+{
+	int counth, countm, i;
+	char sexo;
+	float alt, altm;
+	setlocale(LC_ALL,"portuguese");
+	system("color 2F");
+	counth = 0;
+	countm = 0;
+	altm = 0;
+	i = 0;
+	for (i=1; i <= 15; i++)
+	{
+		printf("\n\t\tNº de Homens: %i \tNº de Mulheres: %i", counth, countm);
+		printf("\n\tQual sexo da %iº pessoa?\n\t M ou F: ", i);
+		scanf("%c", &sexo);
+		fflush(stdin);
+		if (sexo == 'f')
+		{
+			printf("\n\tQual a altura da pessoa? \n\tAltura (Em metros): ");
+			scanf("%f", &alt);
+			fflush(stdin);
+			altm = altm+alt;
+			countm++;
+		}
+		if (sexo == 'm')
+		{
+			counth++;
+		}
+		system("cls");
+		
+	}
+	printf("\n\t Foram calculados %i homens e %i mulheres.\n\t A altura média das mulheres é %.2f metros", counth, countm, (altm/countm));
+	
+	system("pause > null");
+}
